@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import professions from './professions';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const nextProfession = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % professions.length);
+    };
+    const prevProfession = () => {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + professions.length) % professions.length);
+  };
+    return (
+        <div className="app-container"> {/* Add a class to the main container */}
+            <h1>Who Does What</h1>
+            <div className="card-container"> {/* New container for the card and button */}
+                <button className="arrow" onClick={prevProfession}>&lt;</button> {/* Left Arrow */}
+                <Card title={professions[currentIndex].title} description={professions[currentIndex].description} />
+                <button className="arrow" onClick={nextProfession}>&gt;</button> {/* Right Arrow */}
+            </div>
+        </div>
+    );
+};
+
+const Card = ({ title, description }) => (
+    <div className="card">
+        <h2>{title}</h2>
+        <p>{description}</p>
     </div>
-  );
-}
+);
 
 export default App;
