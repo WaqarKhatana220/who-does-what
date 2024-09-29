@@ -1,4 +1,4 @@
-/* src/App.css */
+/* Existing styles */
 
 body {
   margin: 0;
@@ -17,6 +17,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-grow: 1; /* Allow the content to grow to fill available space */
 }
 
 .card {
@@ -29,14 +30,14 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space items evenly */
+  justify-content: space-between;
   position: relative;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-  transform: scale(1.05); /* Slightly increase size */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Enhance shadow */
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .title {
@@ -46,27 +47,46 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-/* New styles for the bottom title */
 .bottom-title {
   width: 100%;
   padding: 5px 0px;
-  margin: 0; /* Remove default margin for bottom heading */
+  margin: 0;
   text-align: right;
 }
 
-/* Centering the description */
 .description {
   padding: 0px 10px;
   text-align: left;
-  flex-grow: 1; /* Allow description to take remaining space */
-  display: flex; /* Enable flexbox on description */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .date {
   padding-right: 10px;
-  border-top: 1px solid #ccc; /* Add a light gray border on top */
+  border-top: 1px solid #ccc;
+}
 
+/* New footer styles */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  text-align: left;
+}
+
+.footer-image img {
+  height: 40px; /* Adjust the height as needed */
 }
 
