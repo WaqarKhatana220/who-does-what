@@ -26,7 +26,8 @@ const App = () => {
 const Card = ({ title, description }) => (
     <div className="card">
         <h2>{title}</h2>
-        <p>{description}</p>
+        <div class="description"><p>{description}</p></div>
+        
     </div>
 );
 

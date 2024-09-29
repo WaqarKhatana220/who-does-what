@@ -15,27 +15,48 @@ body {
   display: flex; /* Use flexbox to align items */
   flex-direction: row; /* Align items horizontally */
   align-items: center; /* Center the items vertically */
-  border: 2px solid red;
   justify-content: center; /* Center the items horizontally */
-  
 }
 
 .card {
-  width: 20%; /* Set card width to 20% of the viewport width */
+  width: 15%; /* Set card width to 20% of the viewport width */
   height: 300px; /* Set a fixed height for the card */
   border: 1px solid #ccc; /* Light gray border */
-  padding: 20px;
   margin: 20px;
-  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  background-color: #222; /* Dark gray background for the card */
+  background-color: black; /* Dark gray background for the card */
   color: white; /* Set text color inside the card to white */
-  transition: transform 0.2s; /* Add a smooth transition for hover effect */
   display: flex; 
   flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Center content vertically */
+  justify-content: flex-start; /* Align items at the top of the card */
+  position: relative; /* Position relative for the title line */
 }
 
-.card h2, .card p {
-  margin: 0; /* Remove default margin for heading and paragraph */
+.card h2 {
+  width: 100%; /* Set title width to 100% */
+  padding: 5px 0px;
+  margin: 0; /* Remove default margin for heading */
+  border-bottom: 1px solid #ccc; /* Light gray border */
+}
+
+
+
+.arrow {
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: white; /* Set arrow color */
+  font-size: 24px; /* Set arrow font size */
+  cursor: pointer; /* Change cursor to pointer */
+  padding: 10px; /* Add some padding */
+  transition: color 0.3s; /* Add transition for color change */
+}
+
+.arrow:hover {
+  color: #ccc; /* Change color on hover */
+}
+
+.description {
+  border: 1px solid #ccc; /* Light gray border */
+  padding: 0px 10px;
+  text-align: left;
 }
