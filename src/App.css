@@ -31,6 +31,12 @@ body {
   flex-direction: column;
   justify-content: space-between; /* Space items evenly */
   position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Enhance shadow */
 }
 
 .title {
@@ -63,3 +69,4 @@ body {
   border-top: 1px solid #ccc; /* Add a light gray border on top */
 
 }
+
