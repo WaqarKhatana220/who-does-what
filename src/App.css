@@ -3,60 +3,63 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: black; /* Set the background color to black */
-  color: white; /* Set the text color to white for contrast */
+  background-color: black;
+  color: white;
 }
 
 .app-container {
-  text-align: center; /* Center the text */
+  margin-top: 250px;
+  text-align: center;
 }
 
 .card-container {
-  display: flex; /* Use flexbox to align items */
-  flex-direction: row; /* Align items horizontally */
-  align-items: center; /* Center the items vertically */
-  justify-content: center; /* Center the items horizontally */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
-  width: 15%; /* Set card width to 20% of the viewport width */
-  height: 300px; /* Set a fixed height for the card */
-  border: 1px solid #ccc; /* Light gray border */
+  width: 15%;
+  height: 300px;
+  border: 1px solid #ccc;
   margin: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  background-color: black; /* Dark gray background for the card */
-  color: white; /* Set text color inside the card to white */
-  display: flex; 
-  flex-direction: column; /* Stack items vertically */
-  justify-content: flex-start; /* Align items at the top of the card */
-  position: relative; /* Position relative for the title line */
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space items evenly */
+  position: relative;
 }
 
-.card h2 {
-  width: 100%; /* Set title width to 100% */
+.title {
+  width: 100%;
   padding: 5px 0px;
-  margin: 0; /* Remove default margin for heading */
-  border-bottom: 1px solid #ccc; /* Light gray border */
+  margin: 0;
+  border-bottom: 1px solid #ccc;
 }
 
-
-
-.arrow {
-  background: none; /* Remove background */
-  border: none; /* Remove border */
-  color: white; /* Set arrow color */
-  font-size: 24px; /* Set arrow font size */
-  cursor: pointer; /* Change cursor to pointer */
-  padding: 10px; /* Add some padding */
-  transition: color 0.3s; /* Add transition for color change */
+/* New styles for the bottom title */
+.bottom-title {
+  width: 100%;
+  padding: 5px 0px;
+  margin: 0; /* Remove default margin for bottom heading */
+  text-align: right;
 }
 
-.arrow:hover {
-  color: #ccc; /* Change color on hover */
-}
-
+/* Centering the description */
 .description {
-  border: 1px solid #ccc; /* Light gray border */
   padding: 0px 10px;
   text-align: left;
+  flex-grow: 1; /* Allow description to take remaining space */
+  display: flex; /* Enable flexbox on description */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.date {
+  padding-right: 10px;
+  border-top: 1px solid #ccc; /* Add a light gray border on top */
+
 }

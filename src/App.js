@@ -9,25 +9,26 @@ const App = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % professions.length);
     };
     const prevProfession = () => {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + professions.length) % professions.length);
-  };
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + professions.length) % professions.length);
+    };
+
     return (
-        <div className="app-container"> {/* Add a class to the main container */}
+        <div className="app-container">
             <h1>Who Does What</h1>
-            <div className="card-container"> {/* New container for the card and button */}
-                <button className="arrow" onClick={prevProfession}>&lt;</button> {/* Left Arrow */}
-                <Card title={professions[currentIndex].title} description={professions[currentIndex].description} />
-                <button className="arrow" onClick={nextProfession}>&gt;</button> {/* Right Arrow */}
+            <div className="card-container">
+                <button className="arrow" onClick={prevProfession}>&lt;</button>
+                <Card title={professions[currentIndex].title} description={professions[currentIndex].description} date={professions[currentIndex].date} />
+                <button className="arrow" onClick={nextProfession}>&gt;</button>
             </div>
         </div>
     );
 };
 
-const Card = ({ title, description }) => (
+const Card = ({ title, description, date }) => (
     <div className="card">
-        <h2>{title}</h2>
-        <div class="description"><p>{description}</p></div>
-        
+        <h3 class="title">{title}</h3>
+        <div className="description"><p>{description}</p></div>
+        <div class="date"><p className="bottom-title">Originated: {date}</p></div>{/* New title at the bottom */}
     </div>
 );
 
