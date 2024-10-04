@@ -20,7 +20,7 @@ const App = () => {
                 <Card title={professions[currentIndex].title} description={professions[currentIndex].description} date={professions[currentIndex].date} />
                 <button className="arrow" onClick={nextProfession}>&gt;</button>
             </div>
-            <Footer description={professions[currentIndex].description}/>
+            <Footer fun_fact={professions[currentIndex].fun_fact} image={professions[currentIndex].image} />
         </div>
     );
 };
@@ -29,18 +29,17 @@ const Card = ({ title, description, date }) => (
     <div className="card">
         <h3 className="title">{title}</h3>
         <div className="description"><p>{description}</p></div>
-        <div className="date"><p className="bottom-title">Originated: {date}</p></div>{/* New title at the bottom */}
+        <div className="date"><p className="bottom-title">Originated: {date}</p></div>
     </div>
 );
 
-// New Footer component
-const Footer = ({description}) => (
+const Footer = ({fun_fact, image}) => (
     <footer className="footer">
         <div className="footer-text">
-            <p>{description}</p>
+            <p>{fun_fact}</p>
         </div>
         <div className="footer-image">
-            <img src="/logo192.png" alt="Footer" />
+            <img src={image} alt="Footer" />
         </div>
     </footer>
 );
